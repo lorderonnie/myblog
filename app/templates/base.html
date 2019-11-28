@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'bootstrap/base.html'%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title>RONNIE'S BLOG</title>
+        {% endif %}
+        <link href="https://fonts.googleapis.com/css?family=Charm|Parisienne|Playfair+Display+SC|Rouge+Script|Tangerine&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+    </head>
+   
+    <body>
+       
+            {% block navbar %}
+                {% include 'navbar.html' %}
+            {% endblock %} 
+        {% block content %}  
+        {% endblock %}
+    </body>
+</html>
