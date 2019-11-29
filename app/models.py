@@ -1,6 +1,16 @@
 from . import db 
 
-
+class Quote(db.Model):
+    '''
+    THis is the class used to define the quote objects
+    '''
+    def __init__(self,id,author,quote):
+        self.id = id
+        self.author = author
+        self.quote = quote
+        
+    
+        
 
 
 
