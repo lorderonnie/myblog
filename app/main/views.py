@@ -2,6 +2,7 @@ from . import main
 from flask import render_template,request,redirect,url_for
 from .. import db
 from ..request import get_quote
+from ..models import User
 
 
 
