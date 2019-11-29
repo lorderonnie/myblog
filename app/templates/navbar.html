@@ -16,7 +16,19 @@
       <li id="run" class="nav-item">
         <a class="nav-link" href="/"><b>My Gallery</b></a>
       </li>
+    
     </ul>
+    <div class="card">
+    <div id="dawn">
+      {% if current_user.is_authenticated %}
+        <a id="you" href="{{url_for('auth.logout')}}">Sign out</a>
+      {% else %}
+      
+        <a id="me"href="{{url_for('auth.login')}}">Sign in</a>
+      
+      {% endif %}
+    </div>
+    </div>
   </div>
 </nav>
 <style>
@@ -25,6 +37,24 @@
         }
         a:hover{
             color:red;
+        }
+        #dawn{
+                color:black;
+                position:absolute;
+                top:10%;
+                left:96%;
+        }
+        #dawn:hover{
+                   background-color:grey;
+        }
+        #me{
+            margin:0px; 
+            color:silver; 
+            font-size:25px;
+        }
+        #you{
+            margin:12px; 
+            color:silver; 
         }
         #big{
             margin:12px; 
@@ -37,6 +67,7 @@
         #run{
             margin:12px;
             color:silver;
+
         }
         #forever{
                 background-color:transparent;
@@ -52,6 +83,7 @@
             color:silver;
             font-size:20px;
             font-family: 'Tangerine', cursive;
+            margin-right:40px;
         }
 
 </style>

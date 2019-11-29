@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block content %}
+<style>
+        h1{
+            color:gray;
+            font-size:50px;
+            text-align:center;
+
+        }
+        body{
+            background-color:#222831;
+            background-image:url(https://images.wallpaperscraft.com/image/splash_spray_drops_128722_1920x1080.jpg);
+            background-size:cover;
+        }
+
+
+</style>
+<div class="container">
+    <div class="row">
+            <h1>WELCOME !!!!</h1>
+            <div class="col-md-2"> 
+
+            </div>
+            <div class="col-md-8">
+
+            {{wtf.quick_form(registration_form)}}
+
+            </div>
+            <div class="col-md-2">
+
+            </div>
+    </div>
+</div>
+
+{% endblock%}
