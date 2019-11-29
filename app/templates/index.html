@@ -12,7 +12,7 @@
         body{
             background-color:#222831;
         }
-        p{
+        #life{
             color:#c9d1d3;
             font-size:25px;
             font-family: 'Parisienne', cursive;
@@ -21,12 +21,30 @@
             left:68%;
             top:15%;
         }
+        #author{
+                color:black;
+                text-align:center;
+                font-size:16px;
+        }
+        #quote{
+                color:silver;
+                font-size:20px;
+                text-align:center;
+                font-family: 'Charm', cursive;
+        }
 </style>
 <body>
-<h1><i>Ronnie's Blog</i></h1>
-<p>"I alone cannot change the world, but I can cast a stone across the water to create many ripples"- Mother Teresa</p>
-
-
+    <h1><i>Ronnie's Blog</i></h1>
+    <p id ="life">"I alone cannot change the world, but I can cast a stone across the water to create many ripples"- Mother Teresa</p><br><br><br>
+    
+    <div class="card">
+    {% for quote_name1 in quote_name%} 
+            <h5 id="author"><i>"{{quote_name1.quote}}"</i></h5>
+    {% endfor %}
+    {% for quote_author in quote_name%} 
+            <h5 id="quote"><b>{{quote_author.author}}</b></h5>
+    {% endfor %}
+    </div>
 
 
 </body>

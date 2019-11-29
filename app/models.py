@@ -1,6 +1,6 @@
 from . import db 
 
-class Quote(db.Model):
+class Quote():
     '''
     THis is the class used to define the quote objects
     '''
