@@ -21,6 +21,7 @@
     <div class="card">
     <div id="dawn">
       {% if current_user.is_authenticated %}
+        <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
         <a id="you" href="{{url_for('auth.logout')}}">Sign out</a>
       {% else %}
       
