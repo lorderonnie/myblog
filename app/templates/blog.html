@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block content%}
+<body>
+    <div class = "row">
+        <div class="card">
+            <p style="color:black;">{{blog.title}}<p>
+            <p style="color:black;">{{blog.topic}}<p>
+            <p style="color:black;">{{blog.body}}
+        </div>
+        
+    </div>
+   
+</body>
+<style>
+
+      body{
+            background-color:#222831;
+            background-image:url(https://cdn.zmescience.com/wp-content/uploads/2018/01/water-839590_960_720.jpg);
+            background-size:cover;
+        }
+    p{
+        color:black;
+    }
+</style>
+{% endblock%}

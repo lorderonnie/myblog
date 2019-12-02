@@ -2,9 +2,9 @@ from . import main
 from flask import render_template,request,redirect,url_for,abort
 from .. import db
 from ..request import get_quote
-from ..models import User
-from flask_login import login_required
-from .forms import UpdateProfile
+from ..models import User,Blog
+from flask_login import login_required,current_user
+from .forms import UpdateProfile,NewBlog
 
 
 @main.route('/')
@@ -45,4 +45,31 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
 
     return render_template('profile/update.html',form =form)
+
+@main.route('/blog/new/<uname>' ,methods=["GET",'POST'])
+def new_blog(uname):
+    user = User.query.filter_by(username = uname).first()
+    if user is None:
+        abort(404)
+    form = NewBlog()
+    if form.validate_on_submit():
+        title = form.title.data
+        topic = form.topic.data
+        body = form.body.data
+
+        
+        
+        new_blog = Blog(title = title,topic = topic,body = body)
+
+        new_blog.saves_Blog()
+        
+        return redirect(url_for('main.new_blog',uname = current_user.username))
+    title = "New Blog"
+    return render_template('newblog.html',title = title, new_blog_form = form, user = user)
+
+
+
+
+
+
 

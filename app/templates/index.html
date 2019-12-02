@@ -37,21 +37,61 @@
                 text-align:center;
                 font-family: 'Charm', cursive;
         }
+        .ronald {
+                box-shadow: 0 4px 8px 0 white);
+                transition: 0.3s;
+                width:440px;
+                height:380px;
+                }
+
+                .ronald:hover {
+                box-shadow: 0 8px 16px 0 grey;
+                }
+
+                .light {
+                padding: 2px 16px;
+                }
+        p{
+               
+                color:#D6CFCB;
+        }
+        
 </style>
 <body>
     <h1><i>Ronnie's Blog</i></h1>
-    <p id ="life">"I alone cannot change the world, but I can cast a stone across the water to create many ripples"- Mother Teresa</p><br><br><br>
+    <h5 id ="life">"I alone cannot change the world, but I can cast a stone across the water to create many ripples"- Mother Teresa</h5><br><br>
     
-    <div class="card">
+    <div class="card-body">
     {% for quote_name1 in quote_name%} 
             <h5 id="author"><i>"{{quote_name1.quote}}"</i></h5>
     {% endfor %}
     {% for quote_author in quote_name%} 
             <h5 id="quote"><b>{{quote_author.author}}</b></h5>
     {% endfor %}
+    </div><br>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-3">
+    <div class="ronald">
+        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/life-changes-quotes-today-i-am-wise-1543619244.jpg" alt="Avatar" style="width:420px; height:300px;">
+        <div class="light">
+                <h4><b>Ronnies thoughts:</b></h4>
+                <p>Mistakes make us,they change us,they correct us and they teach us.We should value them.</p>
+        </div>
     </div>
-
-
+    </div>
+     <div class="col-md-3"></div>
+    <div class="col-md-3">
+    <div class="ronald">
+        <img src="https://isha.sadhguru.org/us-en/wp-content/uploads/2017/09/Worthy-Matters_SadhguruQuote.jpg" alt="Avatar" style="width:390px; height:280px;">
+        <div class="light">
+                <h4><b>Ronnies thoughts:</b></h4>
+                <p>Its what really defines us?Is it our thoughts or our actions?Is it the pain or the happiness?</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
 </body>
 
 

@@ -1,6 +1,25 @@
 {% extends 'base.html'%}
 
 {% block content %}
+<style>
+        body{
+            background-color:#222831;
+            background-image:url(https://westwoodgroup.com/wp-content/uploads/2017/09/G-611457513.jpg);
+            background-size:cover;
+        
+        }
+        p{
+          color:#BBDEF0;
+          font-size:30px;
+          font-family: 'Rouge Script', cursive;
+        }
+        h3{
+          font-size:64px;
+          font-family: 'Playfair Display SC', serif;
+        }
+
+</style>
+<body>
 <div class="container">
 <div class="row">
 
@@ -14,18 +33,17 @@
       <p> {{user.username| capitalize}} has no bio </p>
     {% endif %}
   </div>
-
+   <div class="col-md-4"></div>
   <div class="col-md-4">
 
-    {% if user.profile_pic_path %}
-    <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
-    {% else%}
-    <p>No profile picture</p>
-    {% endif %}
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD11pou96am5RYa3J9XOA7oqN9UdKvlnpM3poGWpSbfxk1DQIw&s" alt="" class="img-thumbnail">
+  
     {% if user == current_user %}
-    <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
+    <a class="btn btn-success"href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
     {% endif %}
   </div>
 </div>
 </div>
+</body>
 {% endblock %}

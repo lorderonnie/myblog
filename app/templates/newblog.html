@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block content%}
+
+<body>
+    <div class="container">
+        <p>NEW BLOG</p>
+       <span id="grow"> {{wtf.quick_form(new_blog_form)}}</span>
+    </div>
+</body>
+<style>
+
+      body{
+            background-color:#222831;
+            background-image:url(https://bekilau.files.wordpress.com/2015/05/wpid-water-drop-1.jpg);
+            background-size:cover;
+        }
+        p{
+            font-size:60px;
+            text-align:center;
+            color:#5B6057;
+            font-family: 'Charm', cursive;
+        }
+        #grow{
+            color:black;
+            font-size:17px;
+            font-family: 'Playfair Display SC', serif;
+        }
+</style>
+{% endblock%}
