@@ -12,7 +12,10 @@
       </li>
       {% if current_user.is_authenticated %}
       <li id="why" class="nav-item">
-        <a class="nav-link" href="/blog/new/{{current_user.username}}"><b>Your blog</b></a>
+        <a class="nav-link" href="/blog/new/{{current_user.username}}"><b>Create blog</b></a>
+      </li>
+       <li id="why" class="nav-item">
+        <a class="nav-link" href="/blog"><b>My-blog</b></a>
       </li>
         <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
         <a id="you" href="{{url_for('auth.logout')}}">Sign out</a>

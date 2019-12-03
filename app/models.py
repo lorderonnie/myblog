@@ -2,7 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
-
+from datetime import datetime
 
 class Quote():
     '''
@@ -23,7 +23,7 @@ class User(UserMixin,db.Model):
     pass_secure = db.Column(db.String(255))
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
-    
+   
     
     @property
     def password(self):
@@ -51,9 +51,14 @@ class Blog(db.Model):
     title = db.Column(db.String(255))
     topic = db.Column(db.String(255))
     body = db.Column(db.String(255))
-    email = db.Column(db.String(255),unique = True,index = True)
-  
-
+    user_id = db.Column(db.Integer)
+   
+    def delete_blog(self):
+        db.session.delete(self)
+        db.session.commit()
+    
+    
+     
     def saves_Blog(self):
         db.session.add(self)
         db.session.commit()
@@ -69,4 +74,24 @@ class Blog(db.Model):
         blog_list = Blog.query.all()
         return blog_list
 
-    
+class Comment(db.Model):
+    __tablename__= 'comment'  
+    id = db.Column(db.Integer,primary_key = True)
+    posted = db.Column(db.DateTime, default = datetime.utcnow)
+    comment = db.Column(db.String(255))
+    user = db.Column(db.String(255))
+    user_id = db.Column(db.Integer)
+    Blog_id = db.Column(db.Integer)
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+        
+    def delete_comment(self):
+        db.session.delete(self)
+        db.session.commit()
+        
+    @classmethod
+    def get_blog_comment(cls,id):
+        comment = Comment.query.filter_by(Blog_id = id)
+
+        return comment  

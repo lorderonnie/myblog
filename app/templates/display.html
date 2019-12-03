@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% block content%}
+<style>
+        body{
+            background-color:#222831;
+            background-image:url(https://www.wallpaperup.com/uploads/wallpapers/2013/07/26/122349/0c38698122b16f8ad9aa1ba4e7138f9f-700.jpg);
+            background-size:cover;
+        }
+        p{
+            color:silver;
+            font-size:25px;
+            text-align:center;
+        }
+        h1{
+            color:black;
+            font-size:60px;
+            text-align:center;
+        }
+        .vlog{
+            box-shadow: 0 4px 8px 0 white);
+            transition: 0.3s;
+            width:400px;
+            height:350px;
+            }
+
+            .vlog:hover {
+            box-shadow: 0 8px 16px 0 grey;
+            }
+
+            .light {
+            padding: 2px 16px;
+            }
+</style>
+<body>
+        <h1> COMMENTS </h1><br><br>
+    <div class="vlog">
+        <p style="font-size:30px; color:black;">Title:{{blog.title}}</p>
+    
+
+    {% for com in comment %}
+        <div class="card">
+            <p>{{com.comment}}</p>
+        </div>
+        
+    {% endfor%}
+    </div>
+</body>
+{% endblock%}

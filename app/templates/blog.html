@@ -1,25 +1,49 @@
 {% extends 'base.html'%}
 {% block content%}
 <body>
+    <div class="container">
     <div class = "row">
-        <div class="card">
-            <p style="color:black;">{{blog.title}}<p>
-            <p style="color:black;">{{blog.topic}}<p>
-            <p style="color:black;">{{blog.body}}
-        </div>
-        
+    {% for blog in blogs %}
+       
+            <div class="friends">
+                <img id="fry" src="https://icon-library.net/images/gamepad-icon/gamepad-icon-21.jpg" alt="avatar" width="200px"height="200px">
+                <p>Title:{{blog.title}}</p>
+                <p>Topic:{{blog.topic}}</p>
+                <p>Thoughts:{{blog.body}}</p>
+                <a href ="/blog/comment/display/{{blog.id}}" class="btn btn-primary">view comments</a>
+                <a href="/blog/comment/new/{{blog.id}}" class ="btn btn-primary">Add Comment</a>
+                <a href="/blog/delete/{{blog.id}}" class="btn btn-danger">delete blog</a>
+            </div>
+       
+    {% endfor %} 
     </div>
-   
+    </div>
 </body>
 <style>
 
       body{
             background-color:#222831;
-            background-image:url(https://cdn.zmescience.com/wp-content/uploads/2018/01/water-839590_960_720.jpg);
+            background-image:url(https://images.wallpaperscraft.com/image/splash_spray_drops_128722_3840x2400.jpg);
             background-size:cover;
         }
     p{
-        color:black;
+        color:silver;
+        text-align:center;
+        font-size:24px;
     }
+    .friends{
+            box-shadow: 0 4px 8px 0 white);
+            transition: 0.3s;
+            width:400px;
+            height:350px;
+            }
+
+            .friends:hover {
+            box-shadow: 0 8px 16px 0 grey;
+            }
+
+            .light {
+            padding: 2px 16px;
+            }
 </style>
 {% endblock%}

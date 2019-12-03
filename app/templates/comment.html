@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block content%}
+<style>
+      body{
+            background-color:#222831;
+            background-image:url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6a164f27-dd0f-4ce6-9cf9-965322f725be/d35fh7p-55b5106f-d2f6-45b4-97d3-8d8e9536d35c.jpg/v1/fill/w_900,h_720,q_75,strp/sub_focus___splash_wallpaper_by_dvolvemusic_d35fh7p-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvNmExNjRmMjctZGQwZi00Y2U2LTljZjktOTY1MzIyZjcyNWJlXC9kMzVmaDdwLTU1YjUxMDZmLWQyZjYtNDViNC05N2QzLThkOGU5NTM2ZDM1Yy5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.a0yi8CeDcP_6HmcAyZxH2C67i41zaluuijoy0N633-s);
+            background-size:cover;
+            color:white;
+        }
+        p{
+            font-size:34px;
+            font-family: 'Playfair Display SC', serif;
+            color:#969696;
+        }
+
+</style>
+<body>
+    <div class="container">
+        <p>Give us a comment</p>
+        {{wtf.quick_form(comment_form)}}
+    </div>
+</body>
+{% endblock%}
